@@ -1,0 +1,43 @@
+* {
+  font-family: Tahoma;
+}
+body {
+  margin: 5em 10em 5em 10em;
+}
+p {
+  text-align: justify;
+}
+li {
+  list-style-type: square;
+}
+#cena {
+  color: red;
+  font-weight: bold;
+}
+.wstep {
+  font-style: italic;
+}
+td > img {
+  border-style: solid;
+  border-color: blue;
+  width: 800px;
+  &:hover {
+    border-color: red;
+  }
+}
+h1 + h2 {
+  letter-spacing: 5px;
+}
+td[colspan="2"] > p {
+  font-size: small;
+}
+p + p {
+  color: gray;
+}
+h1 {
+  color: blue;
+}
+h1 {
+  color: green;
+}
+/* Działa ostatnia deklaracja, więc nagłówek h1 będzie zielony. */

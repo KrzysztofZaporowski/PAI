@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <title>How to Build a Car | Adrian Newey</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Krzysztof Zaporowski" />
+    <meta name="description" content="opis książki" />
+    <meta name="robots" content="index, nofollow" />
+    <style>
+      h1 {
+        color: yellow;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="style.css"
+      title="Arkusz stylów CSS"
+    />
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+    <!-- 18. Jak style jest przed link to tytuł będzie zółty, a jak link jest przed style to tytuł będzie zielony, bo później zapisana reguła nadpisuje poprzednią -->
+    <!-- 19. Jak mamy !important to ta reguła będzie miała pierwszeństwo przed innymi, nawet jeśli jest później zapisana, ale jeśli inna reguła też ma !important to wtedy ta która jest później zapisana będzie miała pierwszeństwo -->
+    <!-- 20. Jeśli mamy kilka reguł dla tego samego elementu to ta która jest później zapisana będzie miała pierwszeństwo, chyba że wcześniejsza reguła ma !important, wtedy ona będzie miała pierwszeństwo przed późniejszą regułą bez !important. Po usunięciu !important ze wcześniejszego atrybutu style ttytuł jest czerwony -->
+  </head>
+  <body>
+    <h1>How to Build a Car</h1>
+    <h2>Adrian Newey</h2>
+    <table>
+      <tr>
+        <td>
+          <img
+            src="https://m.media-amazon.com/images/I/71WwS9zj2qL.jpg"
+            alt="tutaj zdjęcie okładki"
+          />
+        </td>
+        <td>
+          <ul>
+            <li><b>wydawnictwo</b>: <u>Harper Collins</u></li>
+            <li><b>liczba stron</b>: 390</li>
+            <li><b>okładka</b>: twarda</li>
+            <li><b>cena</b>: <span id="cena">79,99</span> zł</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p class="wstep">
+            Książka „How to Build a Car” autorstwa Adriana Newey'a to
+            autobiografia jednego z najsłynniejszych projektantów samochodów
+            wyścigowych w historii Formuły 1. Autor opisuje swoją drogę zawodową
+            - od młodości i fascynacji techniką, aż po pracę przy projektowaniu
+            bolidów dla największych zespołów wyścigowych. Książka łączy
+            osobiste wspomnienia z wyjaśnieniami dotyczącymi konstrukcji
+            samochodów wyścigowych.
+          </p>
+          <p>
+            W kolejnych rozdziałach Newey opowiada o swojej pracy w różnych
+            zespołach Formuły 1 i o wyzwaniach związanych z projektowaniem coraz
+            szybszych i bardziej zaawansowanych technologicznie bolidów.
+            Czytelnik poznaje kulisy powstawania samochodów wyścigowych - od
+            pierwszych szkiców na kartce papieru po gotowy pojazd startujący na
+            torze. Autor pokazuje również, jak duże znaczenie mają aerodynamika,
+            precyzja projektowania i współpraca całego zespołu inżynierów.
+          </p>
+          <p>
+            Książka zawiera także wiele historii z padoku i opisów rywalizacji
+            między zespołami w Formule 1. Newey wspomina współpracę z wybitnymi
+            kierowcami oraz emocje towarzyszące wyścigom i walce o mistrzostwo
+            świata. Dzięki temu czytelnik może zobaczyć nie tylko techniczną
+            stronę motorsportu, ale również jego ludzkie i sportowe aspekty.
+          </p>
+          <p>
+            „How to Build a Car” to pozycja skierowana zarówno do fanów Formuły
+            1, jak i osób zainteresowanych inżynierią oraz projektowaniem
+            pojazdów. Książka pokazuje, jak pasja do technologii i kreatywność
+            mogą prowadzić do tworzenia jednych z najszybszych samochodów na
+            świecie oraz do osiągania sukcesów w najbardziej prestiżowej serii
+            wyścigowej.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
