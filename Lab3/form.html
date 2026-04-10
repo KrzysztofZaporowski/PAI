@@ -7,6 +7,32 @@
     <title>JavaScript</title>
   </head>
   <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Wiersz 1</td>
+        </tr>
+        <tr>
+          <td>Wiersz 2</td>
+        </tr>
+        <tr>
+          <td>Wiersz 3</td>
+        </tr>
+        <tr>
+          <td>Wiersz 4</td>
+        </tr>
+        <tr>
+          <td>Wiersz 5</td>
+        </tr>
+        <tr>
+          <td>Wiersz 6</td>
+        </tr>
+        <tr>
+          <td>Wiersz 7</td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="swapRows(this)">Wywołaj funkcje</button>
     <form name="dane_osobowe">
       <table>
         <tr>
@@ -33,7 +59,11 @@
         </tr>
         <tr>
           <td>N. panieńskie</td>
-          <td><input type="text" name="f_nazwisko_p" /></td>
+          <td>
+            <span id="NazwiskoPanienskie"
+              ><input type="text" name="f_nazwisko_p"
+            /></span>
+          </td>
         </tr>
         <tr>
           <td>E-mail</td>
@@ -56,7 +86,20 @@
         </tr>
         <tr>
           <td>Uwagi</td>
-          <td><textarea rows="5" cols="15" name="uwagi"></textarea></td>
+          <td>
+            <textarea
+              rows="5"
+              cols="15"
+              name="uwagi"
+              onkeyup="
+                cnt(this.form.uwagi, document.getElementById('zostalo'), 150)
+              "
+            >
+            </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Pozostało <span id="zostalo">150</span> znaków</td>
         </tr>
         <tr>
           <td colspan="2">
