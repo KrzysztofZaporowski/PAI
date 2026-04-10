@@ -62,7 +62,7 @@ main {
 }
 
 main > article {
-  border: 2px solid black;
+  border: 5px solid rgb(162, 25, 200);
   margin: 15px;
   width: 100%;
   display: flex;
@@ -72,8 +72,8 @@ main > article {
 main > article > .subtitle {
   align-self: flex-end;
   background-color: lightgray;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
+  border-left: 5px dashed rgb(162, 25, 200);
+  border-bottom: 5px dashed rgb(162, 25, 200);
 }
 
 main > article > p {
