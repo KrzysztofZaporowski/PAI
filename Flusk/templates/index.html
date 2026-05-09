@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Strona główna{% endblock %} {% block
+content %}
+<h1>Witaj w aplikacji Flask!</h1>
+<p>To jest strona główna naszej aplikacji laboratoryjnej.</p>
+{% if items %}
+<h2>Lista elementów:</h2>
+<ul>
+  {% for item in items %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endblock %}
+
+<!-- <!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Witaj, {{ username }}!</p>
+
+    {% if items %}
+    <h2>Lista zakupów:</h2>
+    <ul>
+      {% for item in items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <p>Długość listy: {{ items|length }}</p>
+    {% else %}
+    <p>Lista zakupów jest pusta.</p>
+    {% endif %}
+  </body>
+</html> -->
