@@ -1,31 +1,33 @@
-# Project Name
+# PAI - Programowanie Aplikacji Internetowych
 
-This is a web application project built with modern technologies.
+Repozytorium zawierające zadania laboratoryjne i projekty realizowane w ramach przedmiotu Programowanie Aplikacji Internetowych.
 
-## Getting Started
+## Struktura Projektu
 
-To get started with this project, follow the instructions below.
+Repozytorium jest podzielone na poszczególne laboratoria oraz większe projekty/tutoriale:
 
-### Prerequisites
+### Laboratoria
+- **[Lab 1](./Lab1)**: Podstawy HTML i CSS. Zawiera przykładowe strony oraz zadania alternatywne (np. car rental, book page).
+- **[Lab 2](./Lab2)**: Praca z arkuszami stylów CSS, pozycjonowanie elementów i layouty.
+- **[Lab 3](./Lab3)**: Wstęp do JavaScript – walidacja formularzy (form_check.js).
+- **[Lab 4](./Lab4)**: Zaawansowany JavaScript – manipulacja DOM, obsługa zdarzeń, praca z formatem JSON oraz AJAX.
 
-- Node.js
-- npm or yarn
+### Projekty i Tutoriale
+- **[Flask Tutorial](./Flusk)**: Podstawy frameworka Flask (Python). Zawiera `app.py` oraz tutorial w formacie Jupyter Notebook (`flask_tutorial2026.ipynb`).
+- **[React Todo List](./todo-list)**: Nowoczesna aplikacja typu To-Do zbudowana w oparciu o **React 19** i **Vite**.
+  - Aby uruchomić: 
+    ```bash
+    cd todo-list
+    npm install
+    npm run dev
+    ```
+- **[Django Tutorial](./Django_Tutorial_System_Zgloszen)**: Projekt systemu zgłoszeń w frameworku Django (w przygotowaniu).
 
-### Installation
+## Wymagania
+W zależności od części projektu mogą być wymagane:
+- Przeglądarka internetowa (do laboratoriów HTML/JS).
+- [Python 3.x](https://www.python.org/) (dla Flask/Django).
+- [Node.js & npm](https://nodejs.org/) (dla projektu React).
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-## Usage
-
-Run the development server:
-
-```bash
-npm run devEmpty
-```
+---
+*Ostatnia aktualizacja: Czerwiec 2026*
