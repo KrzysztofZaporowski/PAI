@@ -1,33 +1,33 @@
-# PAI - Programowanie Aplikacji Internetowych
+# PAI - Web Application Programming
 
-Repozytorium zawierające zadania laboratoryjne i projekty realizowane w ramach przedmiotu Programowanie Aplikacji Internetowych.
+Repository containing laboratory tasks and projects carried out as part of the Web Application Programming course.
 
-## Struktura Projektu
+## Project Structure
 
-Repozytorium jest podzielone na poszczególne laboratoria oraz większe projekty/tutoriale:
+The repository is divided into individual labs and larger projects/tutorials:
 
-### Laboratoria
-- **[Lab 1](./Lab1)**: Podstawy HTML i CSS. Zawiera przykładowe strony oraz zadania alternatywne (np. car rental, book page).
-- **[Lab 2](./Lab2)**: Praca z arkuszami stylów CSS, pozycjonowanie elementów i layouty.
-- **[Lab 3](./Lab3)**: Wstęp do JavaScript – walidacja formularzy (form_check.js).
-- **[Lab 4](./Lab4)**: Zaawansowany JavaScript – manipulacja DOM, obsługa zdarzeń, praca z formatem JSON oraz AJAX.
+### Laboratories
+- **[Lab 1](./Lab1)**: HTML and CSS basics. Contains sample pages and alternative tasks (e.g., car rental, book page).
+- **[Lab 2](./Lab2)**: Working with CSS style sheets, element positioning, and layouts.
+- **[Lab 3](./Lab3)**: Introduction to JavaScript – form validation (form_check.js).
+- **[Lab 4](./Lab4)**: Advanced JavaScript – DOM manipulation, event handling, working with JSON format, and AJAX.
 
-### Projekty i Tutoriale
-- **[Flask Tutorial](./Flusk)**: Podstawy frameworka Flask (Python). Zawiera `app.py` oraz tutorial w formacie Jupyter Notebook (`flask_tutorial2026.ipynb`).
-- **[React Todo List](./todo-list)**: Nowoczesna aplikacja typu To-Do zbudowana w oparciu o **React 19** i **Vite**.
-  - Aby uruchomić: 
+### Projects and Tutorials
+- **[Flask Tutorial](./Flusk)**: Basics of the Flask framework (Python). Includes `app.py` and a tutorial in Jupyter Notebook format (`flask_tutorial2026.ipynb`).
+- **[React Todo List](./todo-list)**: A modern To-Do application built with **React 19** and **Vite**.
+  - To run: 
     ```bash
     cd todo-list
     npm install
     npm run dev
     ```
-- **[Django Tutorial](./Django_Tutorial_System_Zgloszen)**: Projekt systemu zgłoszeń w frameworku Django (w przygotowaniu).
+- **[Django Tutorial](./Django_Tutorial_System_Zgloszen)**: Ticket system project in the Django framework (under development).
 
-## Wymagania
-W zależności od części projektu mogą być wymagane:
-- Przeglądarka internetowa (do laboratoriów HTML/JS).
-- [Python 3.x](https://www.python.org/) (dla Flask/Django).
-- [Node.js & npm](https://nodejs.org/) (dla projektu React).
+## Requirements
+Depending on the project part, the following may be required:
+- Web browser (for HTML/JS labs).
+- [Python 3.x](https://www.python.org/) (for Flask/Django).
+- [Node.js & npm](https://nodejs.org/) (for the React project).
 
 ---
-*Ostatnia aktualizacja: Czerwiec 2026*
+*Last update: June 2026*
