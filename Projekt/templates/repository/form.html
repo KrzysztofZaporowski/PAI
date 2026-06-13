@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{% if object %}Edytuj{% else %}Dodaj{% endif %} Bazę Danych{% endblock %}
+
+{% block content %}
+    <h2>{% if object %}Edytuj wpis: {{ object.name }}{% else %}Dodaj nową bazę danych{% endif %}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: #666;">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div style="color: red;">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        
+        <div style="margin-top: 20px;">
+            <button type="submit" class="btn">Zapisz</button>
+            <a href="{% url 'repository:list' %}" class="btn btn-secondary">Anuluj</a>
+        </div>
+    </form>
+{% endblock %}

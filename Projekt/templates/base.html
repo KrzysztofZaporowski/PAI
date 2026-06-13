@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Repozytorium Baz Danych{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+        header { background: #2c3e50; color: #fff; padding: 1rem 0; text-align: center; }
+        nav { background: #34495e; color: #fff; padding: 0.5rem; text-align: center; }
+        nav a { color: #fff; margin: 0 10px; text-decoration: none; }
+        main { padding: 20px; max-width: 1000px; margin: auto; background: #fff; min-height: 80vh; }
+        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }
+        .btn { display: inline-block; padding: 8px 16px; background: #3498db; color: #fff; text-decoration: none; border-radius: 4px; }
+        .btn-danger { background: #e74c3c; }
+        .btn-secondary { background: #95a5a6; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table th, table td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        table th { background: #f2f2f2; }
+        .filter-form { margin-bottom: 20px; display: flex; gap: 10px; align-items: center; }
+        input[type="text"], select, textarea { padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Repozytorium Baz Danych</h1>
+    </header>
+    <nav>
+        <a href="{% url 'repository:list' %}">Lista Baz</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'repository:create' %}">Dodaj Nową</a>
+            <span style="margin-left: 20px;">Witaj, {{ user.username }}!</span>
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline;">Wyloguj</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">Zaloguj się</a>
+        {% endif %}
+    </nav>
+    <main>
+        {% if messages %}
+            {% for message in messages %}
+                <div style="padding:10px; margin-bottom:10px; background:{% if message.tags == 'success' %}#d4edda{% else %}#f8d7da{% endif %}; color:{% if message.tags == 'success' %}#155724{% else %}#721c24{% endif %}; border: 1px solid;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        &copy; 2026 Portal Zarządzania Repozytorium Baz Danych
+    </footer>
+    
+    <script>
+        function confirmAction(message) {
+            return confirm(message || "Czy na pewno chcesz wykonać tę nieodwracalną operację?");
+        }
+    </script>
+</body>
+</html>
