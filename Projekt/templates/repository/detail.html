@@ -25,12 +25,67 @@
         <strong>Opis:</strong>
         <p style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-left: 5px solid #3498db;">{{ db.description }}</p>
     </div>
+    {% if db.complexity %}
+    <div class="form-group">
+        <strong>Liczba tabel:</strong> {{ db.complexity }}
+    </div>
+    {% endif %}
+    {% if db.schema_image %}
+    <div class="form-group">
+        <strong>Schemat (obraz):</strong><br>
+        <img src="{{ db.schema_image.url }}" alt="Schemat" style="max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 10px;">
+    </div>
+    {% endif %}
+    {% if db.ddl_file %}
+    <div class="form-group">
+        <strong>Plik DDL:</strong> <a href="{{ db.ddl_file.url }}" download>Pobierz</a>
+    </div>
+    {% endif %}
 
-    {% if user.is_authenticated %}
+
+    {% if user == db.owner %}
         <hr>
         <div style="margin-top: 20px;">
             <a href="{% url 'repository:update' db.pk %}" class="btn">Edytuj ten wpis</a>
             <a href="{% url 'repository:delete' db.pk %}" class="btn btn-danger" onclick="return confirmAction('Czy na pewno chcesz usunąć tę bazę danych? Ta operacja jest nieodwracalna.')">Usuń wpis</a>
         </div>
     {% endif %}
+
+    <hr>
+    <h3>Pytania i Odpowiedzi</h3>
+    <div class="qa-section">
+        {% for question in db.questions.all %}
+            <div class="question" style="background: #eef; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                <strong>{{ question.author }}</strong> ({{ question.created_at|date:"Y-m-d H:i" }}):
+                <p>{{ question.content }}</p>
+                {% if user == question.author %}
+                    <a href="{% url 'repository:question_delete' question.pk %}" class="btn btn-danger btn-sm">Usuń</a>
+                {% endif %}
+                
+                <div class="answers" style="margin-left: 20px; margin-top: 10px;">
+                    {% for answer in question.answers.all %}
+                        <div class="answer" style="background: #fff; padding: 10px; margin-bottom: 5px; border-left: 3px solid #3498db;">
+                            <strong>{{ answer.author }}</strong> ({{ answer.created_at|date:"Y-m-d H:i" }}):
+                            <p>{{ answer.content }}</p>
+                            {% if user == answer.author %}
+                                <a href="{% url 'repository:answer_delete' answer.pk %}" class="btn btn-danger btn-sm">Usuń</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    
+                    {% if user == db.owner %}
+                        <a href="{% url 'repository:answer_add' question.pk %}" class="btn btn-secondary btn-sm">Odpowiedz</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>Brak pytań do tej bazy.</p>
+        {% endfor %}
+        
+        {% if user.is_authenticated %}
+            <div style="margin-top: 20px;">
+                <a href="{% url 'repository:question_add' db.pk %}" class="btn">Zadaj pytanie</a>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}

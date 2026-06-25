@@ -6,7 +6,14 @@
     <h2>Zgromadzone bazy danych</h2>
 
     <form method="get" class="filter-form">
-        <input type="text" name="q" placeholder="Filtruj po nazwie..." value="{{ request.GET.q }}">
+        <input type="text" name="q" placeholder="Filtruj po nazwie..." value="{{ request.GET.q|default_if_none:'' }}">
+        <input type="text" name="author" placeholder="Filtruj po autorze..." value="{{ request.GET.author|default_if_none:'' }}">
+        <select name="size_class">
+            <option value="">-- Rozmiar --</option>
+            {% for code, label in size_choices %}
+                <option value="{{ code }}" {% if request.GET.size_class == code %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
         <select name="sort">
             <option value="name" {% if request.GET.sort == 'name' %}selected{% endif %}>Sortuj: Nazwa (A-Z)</option>
             <option value="-name" {% if request.GET.sort == '-name' %}selected{% endif %}>Sortuj: Nazwa (Z-A)</option>
@@ -32,7 +39,7 @@
                     <td>{{ db.get_size_class_display }}</td>
                     <td>
                         <a href="{% url 'repository:detail' db.pk %}" class="btn">Szczegóły</a>
-                        {% if user.is_authenticated %}
+                        {% if user == db.owner %}
                             <a href="{% url 'repository:update' db.pk %}" class="btn btn-secondary">Edytuj</a>
                         {% endif %}
                     </td>
